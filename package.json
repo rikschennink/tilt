@@ -1,0 +1,46 @@
+{
+  "name": "Tilt",
+  "version": "1.0.0",
+  "description": "A micro script that simulates touch feedback on HTML elements.",
+  "homepage": "http://rikschennink.github.io/tilt/",
+  "main": "tilt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rikschennink/tilt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rikschennink/tilt/issues"
+  },
+  "keywords": [
+    "javascript",
+    "feedback",
+    "touch",
+    "tilt"
+  ],
+  "author": {
+    "name": "Rik Schennink",
+    "url": "http://rikschennink.nl"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-header": "^1.2.2",
+    "gulp-highlight": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-sass": "^2.0.4",
+    "gulp-size": "^1.2.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-wrap": "^0.11.0",
+    "jsdom": "^6.1.0"
+  }
+}

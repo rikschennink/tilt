@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Tilt.js • Actual Interactive Buttons</title>
+
+    <meta name="description" content="Tilt: A micro script that simulates touch feedback on HTML elements.">
+    <meta name="author" content="Rik Schennink">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<main>
+
+    <h1 class="tilt"><a href="http://rikschennink.github.io/tilt/">Tilt<span>.js</span></a></h1>
+
+    <div class="tagline">
+        <p><strong>A 2 kB, dependency free, micro script that simulates touch feedback on HTML elements.</strong></p>
+        <p>Give it a try, tap or click the logo.</p>
+    </div>
+
+    <nav role="navigation">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a data-tilt-pivot="none" class="tilt" href="#setup">Quick Setup</a></li>
+            <li><a data-tilt-pivot="none" class="tilt" href="#examples">Examples</a></li>
+            <li><a data-tilt-pivot="none" class="tilt" href="#options">Options</a></li>
+            <li><a data-tilt-pivot="none" class="tilt" href="#api">API</a></li>
+            <li><a data-tilt-pivot="none" class="tilt" href="#download">Download</a></li>
+            <li><a data-tilt-pivot="none" class="tilt" href="#issues">Tips</a></li>
+        </ul>
+    </nav>
+
+    <section id="setup">
+
+        <h2>Quick Setup</h2>
+
+        <p>You're good to go in two simple steps.</p>
+
+        <ol>
+            <li>Include the <code>tilt.kickstart.js</code> code by adding the following script tag anywhere on your webpage <code>&lt;script src="tilt.kickstart.js"&gt;&lt;/script&gt;</code>.</li>
+            <li>Add the <code>.tilt</code> class to the element you want to tilt.</li>
+        </ol>
+
+        <p>Done!</p>
+
+    </section>
+
+    <section id="examples">
+
+        <h2>Examples</h2>
+
+        <h3>Tabs</h3>
+
+        <ul class="tilt-tabs-sample">
+            <li class="tilt" data-tilt-pivot="top" data-tilt-depth="20">Woo!</li>
+            <li class="tilt" data-tilt-pivot="top" data-tilt-depth="20">Whee!</li>
+            <li class="tilt" data-tilt-pivot="top" data-tilt-depth="20">Me too!</li>
+            <li class="tilt" data-tilt-pivot="top" data-tilt-depth="20">Yay!</li>
+        </ul>
+
+        <h3>Keypad</h3>
+
+        <div class="tilt-keypad-sample">
+            <button class="tilt" data-tilt-pivot="none">1</button>
+            <button class="tilt" data-tilt-pivot="none">2 <span>abc</span></button>
+            <button class="tilt" data-tilt-pivot="none">3 <span>def</span></button>
+            <button class="tilt" data-tilt-pivot="none">4 <span>ghi</span></button>
+            <button class="tilt" data-tilt-pivot="none">5 <span>jkl</span></button>
+            <button class="tilt" data-tilt-pivot="none">6 <span>mno</span></button>
+            <button class="tilt" data-tilt-pivot="none">7 <span>pqrs</span></button>
+            <button class="tilt" data-tilt-pivot="none">8 <span>tuv</span></button>
+            <button class="tilt" data-tilt-pivot="none">9 <span>wxyz</span></button>
+            <button class="tilt" data-tilt-pivot="none">0</button>
+        </div>
+
+        <h3>Metro Tiles</h3>
+
+        <div class="tilt tilt-sample"><span>Home</span></div>
+        <div class="tilt tilt-sample"><span>Contact</span></div>
+        <div class="tilt tilt-sample"><span>About</span></div>
+
+        <p>This is the default behavior after applying the <code>.tilt</code> class.</p>
+
+    </section>
+
+    <section id="options">
+
+        <h2>Options</h2>
+
+        <p>Using the kickstarter script you can pass options to tilted HTML elements as shown below:</p>
+
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-tilt-shadow</span>=<span class="hljs-value">"false"</span>&gt;</span>Go Tilt!<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+
+        <p>The following options can be set.</p>
+
+        <table class="options">
+            <thead>
+            <tr>
+                <th>Option</th>
+                <th>Description</th>
+                <th>Type</th>
+                <th>Default</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>pivot</th>
+                <td>String</td>
+                <td>"center"</td>
+                <td>
+                    Controls around what point the tile tilts. Possible values are:
+                    <ul>
+                        <li>"center"</li>
+                        <li>"top"</li>
+                        <li>"right"</li>
+                        <li>"bottom"</li>
+                        <li>"left"</li>
+                        <li>"none"</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <th>shadow</th>
+                <td>Boolean</td>
+                <td>true</td>
+                <td>
+                    Control whether the shadow inside the tile should be rendered or not.
+                </td>
+            </tr>
+            <tr>
+                <th>depth</th>
+                <td>Number</td>
+                <td>15</td>
+                <td>The maximum depth the tile can be pressed.</td>
+            </tr>
+            <tr>
+                <th>perspective</th>
+                <td>String</td>
+                <td>"500px"</td>
+                <td>The perspective to render the 3d effects in.</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Elements that are being tilted are called tiles. If you want to manually create tiles instead of using the kickstart functionality embed the <code>tilt.js</code> script instead of the kickstarter script and use the <code>Tile</code> class.</p>
+
+<pre class="hljs"><code><span class="hljs-keyword">var</span> myTile = <span class="hljs-keyword">new</span> Tile(element, {
+    pivot: <span class="hljs-string">"none"</span>,
+    shadow: <span class="hljs-literal">false</span>,
+    depth: <span class="hljs-number">30</span>,
+    perspective: <span class="hljs-string">"400px"</span>
+});</code></pre>
+
+    </section>
+
+    <section id="api">
+
+        <h2>API</h2>
+
+        <p>There are two API's, one for the kickstarter called InstaTilt and the other for Tile instances.</p>
+
+        <h3 id="instatilt-api">InstaTilt</h3>
+
+        <table class="api">
+            <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>parse(context)</th>
+                <td>
+                    Parses a given context for <code>.tilt</code> classes and turns the elements into Tiles.
+                </td>
+            </tr>
+            <tr>
+                <th>getTileByElement(element)</th>
+                <td>
+                    Returns the Tile instance for the supplied element, the element can either be a query selector or a DOM node reference. You can use the <a href="#tile-api">Tile API</a> on the returned value.
+                </td>
+            </tr>
+            <tr>
+                <th>unload(element)</th>
+                <td>
+                    Removes the Tile instance from the supplied element. Cleans up event listeners and frees memory.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Get a tile instance by passing an element reference or string.</p>
+
+<pre class="hljs"><code><span class="hljs-keyword">var</span> myElement = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.my-tile'</span>);
+<span class="hljs-keyword">var</span> myTile = InstaTilt.getTileByElement(myElement);</code></pre>
+
+
+        <h3 id="tile-api">Tile</h3>
+
+        <table class="api">
+            <thead>
+            <tr>
+                <th>Method</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>tilt([x[, y]])</th>
+                <td>
+                    Tilts the tile as if pressed at the given "x", "y" position. The position will be limited to the size of the tile. If no values are supplied the middle of the tile is used.
+                </td>
+            </tr>
+            <tr>
+                <th>untilt()</th>
+                <td>
+                    Restores the tile in its original position.
+                </td>
+            </tr>
+            <tr>
+                <th>unload()</th>
+                <td>
+                    Removes tilt from the element.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Create a custom tile by using the Tile class.</p>
+
+<pre class="hljs"><code><span class="hljs-keyword">var</span> myTile = <span class="hljs-keyword">new</span> Tile(myElement);
+myTile.tilt(<span class="hljs-number">20</span>,<span class="hljs-number">20</span>);</code></pre>
+
+
+    </section>
+
+    <section id="download">
+
+        <h2>Download</h2>
+
+        <ul>
+            <li><a href="https://github.com/rikschennink/tilt/archive/master.zip">Download (2kB)</a></li>
+            <li><a href="https://github.com/rikschennink/tilt/">Fork on GitHub</a></li>
+        </ul>
+
+    </section>
+
+    <section id="issues">
+
+        <h2>Tips</h2>
+
+        <h3>Problems with Jagged Edges</h3>
+
+        <p>On Firefox rotating the tiles can result in jagged edges, to fix this add the following selector to your CSS file.
+
+<pre><code><span class="hljs-class">.tilt</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">outline</span>:<span class="hljs-value"> <span class="hljs-number">1px</span> solid transparent</span></span>; }</span></code></pre>
+
+        <p>Note that the above selector overrides the default focus outline. Beware of the resulting <a href="http://www.outlinenone.com/">accessibility issues</a>.</p>
+
+
+
+        <h3>Changing the Shadow Color</h3>
+
+        <p>You can change the shadow color of a pressed tile by setting a linear gradient on the shadow element Tilt generates. Tilt will adjust the gradient based on the interaction position. The shadow should be set in <code>rgba</code> values.</p>
+
+<pre class="hljs"><code><span class="hljs-class">.my-tilted-element</span> <span class="hljs-class">.tilt-shadow-inner</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-function">linear-gradient</span>(<span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">25</span>))</span></span>;
+}</span></code></pre>
+
+        <h3>No Tilt Happening</h3>
+
+        <p>Transforms cannot be applied to inline elements. So make sure the element you apply the tilt class to is not set to inline.</p>
+
+    </section>
+
+
+</main>
+
+<footer>
+    By <a href="http://rikschennink.nl">Rik Schennink</a> • <a href="http://twitter.com/rikschennink">@rikschennink</a>
+</footer>
+
+<script src="dist/tilt.kickstart.js"></script>
+
+</body>
+</html>
