@@ -206,23 +206,11 @@
 		return Math.max(min,Math.min(value,max))
 	}
 
-	function getShadowGradientByLinearGradient(linearGradient, angle) {
-
-		// add offset to first color
-		var i=0;
-		var shadow = linearGradient.replace(colorRegExp,function(match){
-			if (i==0) {
-				i++;
-				return match + ' 25%';
-			}
-			return match;
-		});
-
-		// rotate
-		return shadow.replace('(','(' + angle + 'deg, ');
+	function rotateLinearGradient(linearGradient, angle) {
+		return linearGradient.replace('(','(' + angle + 'deg, ');
 	}
 
-	function getGradientByElement(element) {
+	function getGradientFromElement(element) {
 
 		// get original gradient (stored or get from computed styles)
 		var gradient = element.getAttribute('data-gradient');
@@ -434,7 +422,7 @@
 				overlay = this._element.querySelector('.tilt-shadow-inner');
 				setStyles(overlay,{
 					'opacity':opacity,
-					'background':getShadowGradientByLinearGradient(getGradientByElement(overlay),rotation)
+					'background':rotateLinearGradient(getGradientFromElement(overlay),rotation)
 				});
 			}
 

@@ -228,29 +228,32 @@ th + td + td {
   outline: 1px solid transparent; }
 
 /* tilt examples */
-.tilt-sample {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 30.5%;
-  max-width: 7em;
-  background: #F1B00F;
-  color: #3F190F;
-  font-size: .875em;
-  vertical-align: top;
-  position: relative;
-  margin: 0 0.25em 0.5em 0;
-  border-radius: .25em; }
-  .tilt-sample::after {
-    display: block;
-    padding-bottom: 100%;
-    content: ''; }
-  .tilt-sample span:first-child {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem; }
-  .tilt-sample .tilt-shadow-inner {
-    background-image: linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25)); }
+.tilt-metro-sample {
+  text-align: center; }
+  .tilt-metro-sample div {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 30.5%;
+    max-width: 7em;
+    background: #F1B00F;
+    color: #3F190F;
+    font-size: .875em;
+    vertical-align: top;
+    position: relative;
+    margin: 0 0.25em 0.5em 0;
+    border-radius: .25em; }
+    .tilt-metro-sample div::after {
+      display: block;
+      padding-bottom: 100%;
+      content: ''; }
+    .tilt-metro-sample div span:first-child {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      right: 1rem;
+      text-align: left; }
+    .tilt-metro-sample div .tilt-shadow-inner {
+      background-image: linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25)); }
 
 .tilt-tabs-sample {
   list-style-type: none;

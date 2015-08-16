@@ -44,7 +44,7 @@
         <p>You're good to go in two simple steps.</p>
 
         <ol>
-            <li>Include the <code>tilt.kickstart.js</code> code by adding the following script tag anywhere on your webpage <code>&lt;script src="tilt.kickstart.js"&gt;&lt;/script&gt;</code>.</li>
+            <li>Include the <code>tilt.kickstart.js</code> file by adding the following script tag anywhere on your webpage <code>&lt;script src="tilt.kickstart.js"&gt;&lt;/script&gt;</code>.</li>
             <li>Add the <code>.tilt</code> class to the element you want to tilt.</li>
         </ol>
 
@@ -84,9 +84,11 @@
 
         <h3>Metro Tiles</h3>
 
-        <div class="tilt tilt-sample"><span>Home</span></div>
-        <div class="tilt tilt-sample"><span>Contact</span></div>
-        <div class="tilt tilt-sample"><span>About</span></div>
+        <div class="tilt-metro-sample">
+            <div class="tilt"><span>Home</span></div>
+            <div class="tilt"><span>Contact</span></div>
+            <div class="tilt"><span>About</span></div>
+        </div>
 
     </section>
 
@@ -96,9 +98,9 @@
 
         <p>Using the kickstarter script you can pass options to tilted HTML elements as shown below:</p>
 
-<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-tilt-shadow</span>=<span class="hljs-value">"false"</span>&gt;</span>Go Tilt!<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
+<pre class="hljs"><code><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-tilt-shadow</span>=<span class="hljs-value">"false"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"tilt"</span>&gt;</span>Go Tilt!<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></code></pre>
 
-        <p>The following options can be set.</p>
+        <p>The following options are available.</p>
 
         <table class="options">
             <thead>

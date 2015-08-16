@@ -353,7 +353,11 @@ td ul {
 
 
 /* tilt examples */
-.tilt-sample {
+.tilt-metro-sample {
+
+  text-align:center;
+
+  div {
     box-sizing:border-box;
     display:inline-block;
     width:30.5%;
@@ -367,22 +371,24 @@ td ul {
     border-radius:.25em;
 
     &::after {
-        display:block;
-        padding-bottom:100%;
-        content:'';
+      display:block;
+      padding-bottom:100%;
+      content:'';
     }
 
     span:first-child {
-        position:absolute;
-        top:1rem;
-        left:1rem;
-        right:1rem;
+      position:absolute;
+      top:1rem;
+      left:1rem;
+      right:1rem;
+      text-align:left;
     }
 
     .tilt-shadow-inner {
-        background-image:linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25));
+      background-image:linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25));
     }
 
+  }
 }
 
 .tilt-tabs-sample {
