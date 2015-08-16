@@ -151,7 +151,7 @@
             </tbody>
         </table>
 
-        <p>Elements that are being tilted are called tiles. If you want to manually create tiles instead of using the kickstart functionality embed the <code>tilt.js</code> script instead of the kickstarter script and use the <code>Tile</code> class as shown below.</p>
+        <p>Elements that are being tilted are called tiles. If you want to manually create tiles instead of using the kickstart functionality embed the <code>tilt.js</code> script and use the <code>Tile</code> class as shown below.</p>
 
 <pre class="hljs"><code><span class="hljs-keyword">var</span> myTile = <span class="hljs-keyword">new</span> Tile(element, {
     pivot: <span class="hljs-string">"none"</span>,
@@ -166,9 +166,11 @@
 
         <h2>API</h2>
 
-        <p>There are two API's, one for the kickstarter called InstaTilt and the other for Tile instances.</p>
+        <p>There are two API's. One for Tile instances and the other is for the kickstarter logic called InstaTilt. </p>
 
         <h3 id="instatilt-api">InstaTilt</h3>
+
+        <p>The InstaTilt API allows you to access tiles once they've automatically been created. You can then manipulate them with the Tile API or unload them.</p>
 
         <table class="api">
             <thead>
@@ -199,12 +201,14 @@
             </tbody>
         </table>
 
-        <p>Get a tile instance by passing an element reference or a queryselector string.</p>
+        <p>Get a tile instance by passing an element reference or a query selector string.</p>
 
 <pre class="hljs"><code><span class="hljs-keyword">var</span> myTile = InstaTilt.getTileByElement(<span class="hljs-string">'.my-tile'</span>);</code></pre>
 
 
         <h3 id="tile-api">Tile</h3>
+
+        <p>The Tile API is used for manipulating individual tiles.</p>
 
         <table class="api">
             <thead>
@@ -244,6 +248,7 @@
         <ul>
             <li><a href="https://github.com/rikschennink/tilt/archive/master.zip">Download (2kB)</a></li>
             <li><a href="https://github.com/rikschennink/tilt/">Fork on GitHub</a></li>
+            <li><a href="https://github.com/rikschennink/tilt/issues/">Submit issue</a></li>
         </ul>
 
     </section>
@@ -252,7 +257,7 @@
 
         <h2>Tips</h2>
 
-        <h3>Problems with Jagged Edges</h3>
+        <h3>Problems with Jagged Edges on FireFox</h3>
 
         <p>On Firefox rotating the tiles can result in jagged edges, to fix this add the following selector to your CSS file.
 
