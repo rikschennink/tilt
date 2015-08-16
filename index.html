@@ -16,7 +16,9 @@
 
 <main>
 
-    <h1 class="tilt"><a href="http://rikschennink.github.io/tilt/">Tilt<span>.js</span></a></h1>
+    <h1 class="tilt">
+        <a href="http://rikschennink.github.io/tilt/">Tilt<span>.js</span></a>
+    </h1>
 
     <div class="tagline">
         <p><strong>A 2 kB, dependency free, micro script that simulates touch feedback on HTML elements.</strong></p>
@@ -26,8 +28,8 @@
     <nav role="navigation">
         <h2>Navigation</h2>
         <ul>
-            <li><a data-tilt-pivot="none" class="tilt" href="#setup">Quick Setup</a></li>
-            <li><a data-tilt-pivot="none" class="tilt" href="#examples">Examples</a></li>
+            <li><a data-tilt-pivot="none" class="tilt" href="#setup">Setup</a></li>
+            <li><a data-tilt-pivot="none" class="tilt" href="#demo">Demo</a></li>
             <li><a data-tilt-pivot="none" class="tilt" href="#options">Options</a></li>
             <li><a data-tilt-pivot="none" class="tilt" href="#api">API</a></li>
             <li><a data-tilt-pivot="none" class="tilt" href="#download">Download</a></li>
@@ -37,7 +39,7 @@
 
     <section id="setup">
 
-        <h2>Quick Setup</h2>
+        <h2>Setup</h2>
 
         <p>You're good to go in two simple steps.</p>
 
@@ -48,13 +50,15 @@
 
         <p>Done!</p>
 
+        <p>Okay, there's one little gotcha, your element needs to be a <a href="https://drafts.csswg.org/css-transforms-1/#transformable-element">non inline element</a> for this to work. Basically anything but <code>display: inline</code> will work.</p>
+
     </section>
 
-    <section id="examples">
+    <section id="demo">
 
-        <h2>Examples</h2>
+        <h2>Demo</h2>
 
-        <h3>Tabs</h3>
+        <h3>Swinging Tabs</h3>
 
         <ul class="tilt-tabs-sample">
             <li class="tilt" data-tilt-pivot="top" data-tilt-depth="20">Woo!</li>
@@ -83,8 +87,6 @@
         <div class="tilt tilt-sample"><span>Home</span></div>
         <div class="tilt tilt-sample"><span>Contact</span></div>
         <div class="tilt tilt-sample"><span>About</span></div>
-
-        <p>This is the default behavior after applying the <code>.tilt</code> class.</p>
 
     </section>
 
@@ -147,7 +149,7 @@
             </tbody>
         </table>
 
-        <p>Elements that are being tilted are called tiles. If you want to manually create tiles instead of using the kickstart functionality embed the <code>tilt.js</code> script instead of the kickstarter script and use the <code>Tile</code> class.</p>
+        <p>Elements that are being tilted are called tiles. If you want to manually create tiles instead of using the kickstart functionality embed the <code>tilt.js</code> script instead of the kickstarter script and use the <code>Tile</code> class as shown below.</p>
 
 <pre class="hljs"><code><span class="hljs-keyword">var</span> myTile = <span class="hljs-keyword">new</span> Tile(element, {
     pivot: <span class="hljs-string">"none"</span>,
@@ -195,10 +197,9 @@
             </tbody>
         </table>
 
-        <p>Get a tile instance by passing an element reference or string.</p>
+        <p>Get a tile instance by passing an element reference or a queryselector string.</p>
 
-<pre class="hljs"><code><span class="hljs-keyword">var</span> myElement = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'.my-tile'</span>);
-<span class="hljs-keyword">var</span> myTile = InstaTilt.getTileByElement(myElement);</code></pre>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> myTile = InstaTilt.getTileByElement(<span class="hljs-string">'.my-tile'</span>);</code></pre>
 
 
         <h3 id="tile-api">Tile</h3>
@@ -231,12 +232,6 @@
             </tr>
             </tbody>
         </table>
-
-        <p>Create a custom tile by using the Tile class.</p>
-
-<pre class="hljs"><code><span class="hljs-keyword">var</span> myTile = <span class="hljs-keyword">new</span> Tile(myElement);
-myTile.tilt(<span class="hljs-number">20</span>,<span class="hljs-number">20</span>);</code></pre>
-
 
     </section>
 
@@ -272,10 +267,6 @@ myTile.tilt(<span class="hljs-number">20</span>,<span class="hljs-number">20</sp
 <pre class="hljs"><code><span class="hljs-class">.my-tilted-element</span> <span class="hljs-class">.tilt-shadow-inner</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-function">linear-gradient</span>(<span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>), <span class="hljs-function">rgba</span>(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,.<span class="hljs-number">25</span>))</span></span>;
 }</span></code></pre>
-
-        <h3>No Tilt Happening</h3>
-
-        <p>Transforms cannot be applied to inline elements. So make sure the element you apply the tilt class to is not set to inline.</p>
 
     </section>
 

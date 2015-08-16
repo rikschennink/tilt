@@ -78,7 +78,7 @@ h1 {
     transform: rotateZ(-5deg); }
     h1 a span {
       font-size: .75em;
-      color: rgba(255, 255, 255, 0.5); }
+      color: #93999C; }
 
 /* tagline */
 .tagline {
@@ -98,7 +98,8 @@ h2 {
   margin: 0 0 1em; }
 
 h3 {
-  font-weight: normal; }
+  font-weight: normal;
+  color: #8D8B9C; }
 
 /* code blocks */
 pre {
@@ -130,7 +131,8 @@ nav {
     color: #3F190F;
     padding: 0.5em 1em;
     text-decoration: none;
-    border-bottom: none; }
+    border-bottom: none;
+    border-radius: .25em; }
 
 a .tilt-tile-shadow-inner {
   color: rgba(255, 130, 14, 0.43); }
@@ -221,18 +223,23 @@ th + td + td {
     .api thead th:first-child {
       width: 13em; } }
 
+/* firefox jagged edges fix */
+.tilt {
+  outline: 1px solid transparent; }
+
 /* tilt examples */
 .tilt-sample {
   box-sizing: border-box;
   display: inline-block;
   width: 30.5%;
   max-width: 7em;
-  background: #3E3D44;
-  color: #fff;
+  background: #F1B00F;
+  color: #3F190F;
   font-size: .875em;
   vertical-align: top;
   position: relative;
-  margin: 0 0.25em 0.5em 0; }
+  margin: 0 0.25em 0.5em 0;
+  border-radius: .25em; }
   .tilt-sample::after {
     display: block;
     padding-bottom: 100%;
@@ -242,25 +249,30 @@ th + td + td {
     top: 1rem;
     left: 1rem;
     right: 1rem; }
+  .tilt-sample .tilt-shadow-inner {
+    background-image: linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25)); }
 
 .tilt-tabs-sample {
   list-style-type: none;
   margin: 0;
   padding: 0;
   text-align: center;
-  border-top: 2px solid #3E3D44; }
+  border-top: 2px solid #F1B00F; }
   .tilt-tabs-sample li {
     display: inline-block;
     cursor: pointer;
     padding: 0 1em;
-    background: #3E3D44;
-    color: #fff;
-    line-height: 3; }
+    background: #F1B00F;
+    color: #3F190F;
+    line-height: 3;
+    border-radius: 0 0 0.25em 0.25em; }
   @media (max-width: 30em) {
     .tilt-tabs-sample li {
       padding: 0 0.75em; }
     .tilt-tabs-sample li:last-child {
       display: none; } }
+  .tilt-tabs-sample .tilt-shadow-inner {
+    background-image: linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25)); }
 
 .tilt-keypad-sample {
   text-align: center;
@@ -273,12 +285,13 @@ th + td + td {
     margin: .125em 0;
     width: 3em;
     height: 3em;
-    background: #3E3D44;
-    color: #fff;
+    background: #F1B00F;
+    color: #3F190F;
     font-size: 1.5rem;
     text-align: center;
     border: none;
-    vertical-align: top; }
+    vertical-align: top;
+    border-radius: .25em; }
     .tilt-keypad-sample button span {
       display: block;
       font-size: .5rem;

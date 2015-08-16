@@ -44,8 +44,8 @@
 
 	// shadow properties
 	'.tilt-shadow-inner {' +
-	'position:absolute;opacity:0;top:0;left:0;right:0;bottom:0;z-index:9999;' +
-	'background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.25))' +
+	'position:absolute !important;opacity:0;top:0 !important;left:0 !important;right:0 !important;bottom:0 !important;z-index:2147483647 !important;' +
+	'background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,.25));' +
 
 	// animation speed
 	'-webkit-transition:opacity ' + TRANSITION_SPEED + 'ms;transition:opacity ' + TRANSITION_SPEED + 'ms;' +
@@ -206,14 +206,11 @@
 		return Math.max(min,Math.min(value,max))
 	}
 
-	function getGradientByElement(element, angle) {
-
-		var styles = window.getComputedStyle(element);
-		var gradient = styles.getPropertyValue('background-image');
+	function getShadowGradientByLinearGradient(linearGradient, angle) {
 
 		// add offset to first color
 		var i=0;
-		var shadow = gradient.replace(colorRegExp,function(match){
+		var shadow = linearGradient.replace(colorRegExp,function(match){
 			if (i==0) {
 				i++;
 				return match + ' 25%';
@@ -221,10 +218,20 @@
 			return match;
 		});
 
-		// rotate gradient
-		shadow = angle + 'deg, ' + shadow;
+		// rotate
+		return shadow.replace('(','(' + angle + 'deg, ');
+	}
 
-		return 'linear-gradient(' + shadow + ')';
+	function getGradientByElement(element) {
+
+		// get original gradient (stored or get from computed styles)
+		var gradient = element.getAttribute('data-gradient');
+		if (!gradient) {
+			gradient = window.getComputedStyle(element).getPropertyValue('background-image');
+			element.setAttribute('data-gradient',gradient);
+		}
+		return gradient;
+
 	}
 
 	var LIGHT = {
@@ -414,7 +421,7 @@
 			// setup light effects
 			if (this._options.shadow && pivot !== 'none') {
 
-				opacity = Math.max(Math.abs(tiltX / maxTiltX),Math.abs(tiltY / maxTiltY));
+				opacity = Math.max(Math.abs(tiltX / maxTiltX), Math.abs(tiltY / maxTiltY));
 
 				if (pivot === 'center') {
 					rotation = 90 + Math.atan2(y - pivotY, x - pivotX) * 180 / Math.PI;
@@ -427,7 +434,7 @@
 				overlay = this._element.querySelector('.tilt-shadow-inner');
 				setStyles(overlay,{
 					'opacity':opacity,
-					'background':getGradientByElement(overlay, rotation)
+					'background':getShadowGradientByLinearGradient(getGradientByElement(overlay),rotation)
 				});
 			}
 

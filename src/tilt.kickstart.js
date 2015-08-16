@@ -3,7 +3,6 @@
 (function(root, factory, undefined){
 
 	// cut the mustard
-	// detect addEventListener, dataset, transition, requestAnimationFrame and transform support
 	if (!root || !root.addEventListener) {
 		return;
 	}

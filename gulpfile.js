@@ -37,7 +37,7 @@ gulp.task('sass',function(){
 
 });
 
-gulp.task('dev',['lib'],function() {
+gulp.task('dev',['lib','sass'],function() {
 
     gulp.watch(['./src/*.js'],['lib']);
 

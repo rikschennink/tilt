@@ -104,7 +104,7 @@ h1 {
 
         span {
             font-size:.75em;
-            color:rgba(255,255,255,.5);
+            color:#93999C;
         }
     }
 
@@ -132,6 +132,7 @@ h1 {
 }
 
 
+
 /* headings */
 h2 {
     font-family:Futura, "Trebuchet MS", Arial, sans-serif;
@@ -140,6 +141,7 @@ h2 {
 
 h3 {
     font-weight:normal;
+    color:#8D8B9C;
 }
 
 
@@ -187,6 +189,7 @@ nav {
         padding:.5em 1em;
         text-decoration:none;
         border-bottom:none;
+        border-radius:.25em;
     }
 }
 
@@ -343,6 +346,10 @@ td ul {
 
 
 
+/* firefox jagged edges fix */
+.tilt {
+  outline:1px solid transparent;
+}
 
 
 /* tilt examples */
@@ -350,14 +357,14 @@ td ul {
     box-sizing:border-box;
     display:inline-block;
     width:30.5%;
-
     max-width:7em;
-    background:#3E3D44;
-    color:#fff;
+    background:#F1B00F;
+    color:#3F190F;
     font-size:.875em;
     vertical-align:top;
     position:relative;
     margin:0 .25em .5em 0;
+    border-radius:.25em;
 
     &::after {
         display:block;
@@ -371,6 +378,11 @@ td ul {
         left:1rem;
         right:1rem;
     }
+
+    .tilt-shadow-inner {
+        background-image:linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25));
+    }
+
 }
 
 .tilt-tabs-sample {
@@ -378,15 +390,16 @@ td ul {
     margin:0;
     padding:0;
     text-align:center;
-    border-top:2px solid #3E3D44;
+    border-top:2px solid #F1B00F;
 
     li {
         display:inline-block;
         cursor:pointer;
         padding:0 1em;
-        background:#3E3D44;
-        color:#fff;
+        background:#F1B00F;
+        color:#3F190F;
         line-height:3;
+        border-radius:0 0 .25em .25em;
     }
 
     @media (max-width:30em) {
@@ -400,6 +413,9 @@ td ul {
         }
     }
 
+    .tilt-shadow-inner {
+       background-image:linear-gradient(rgba(63, 25, 15, 0), rgba(63, 25, 15, 0.25));
+    }
 }
 
 .tilt-keypad-sample {
@@ -416,12 +432,13 @@ td ul {
         margin:.125em 0;
         width:3em;
         height:3em;
-        background:#3E3D44;
-        color:#fff;
+        background:#F1B00F;
+        color:#3F190F;
         font-size:1.5rem;
         text-align:center;
         border:none;
         vertical-align:top;
+        border-radius: .25em;
 
         span {
             display:block;
